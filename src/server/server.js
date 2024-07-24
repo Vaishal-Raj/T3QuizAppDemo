@@ -5,7 +5,9 @@ const cors = require("cors");
 
 const app = express();
 app.use(cors());
-
+app.use("/",(req,res)=>{
+  res.json("Hi from server")
+})
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
