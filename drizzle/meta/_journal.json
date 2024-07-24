@@ -1,0 +1,41 @@
+{
+  "version": "6",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "6",
+      "when": 1721739858644,
+      "tag": "0000_aspiring_may_parker",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1721805975718,
+      "tag": "0001_curved_tempest",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1721807270989,
+      "tag": "0002_wealthy_black_widow",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "6",
+      "when": 1721810331306,
+      "tag": "0003_jittery_proemial_gods",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "6",
+      "when": 1721817839933,
+      "tag": "0004_brown_brother_voodoo",
+      "breakpoints": true
+    }
+  ]
+}

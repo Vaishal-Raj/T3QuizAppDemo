@@ -1,0 +1,1 @@
+ALTER TABLE "t3-appdemo_participant" ADD COLUMN "image" text;
