@@ -30,6 +30,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       clientSecret: process.env.AUTH_DISCORD_SECRET
     }),
   ],
+  secret:process.env.NEXTAUTH_SECRET,
   callbacks: {
     async jwt({ token }) {
       if (!token.sub) return token;
