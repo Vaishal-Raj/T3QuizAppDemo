@@ -5,7 +5,6 @@ import Discord from "next-auth/providers/discord";
 import { db } from "./server/db";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
 import { users,accounts } from "./server/db/schema";
-import { eq } from "drizzle-orm";
 import { UserRole } from "./server/db/schema";
 import { getUserById } from "./server/actions";
 import { env } from "./env";
@@ -24,7 +23,9 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
     }),
     Google({
       clientId: env.GOOGLE_CLIENT_ID,
-      clientSecret: env.GOOGLE_CLIENT_SECRET
+      clientSecret: env.GOOGLE_CLIENT_SECRET,
+      checks:["none"]
+      
     }),
     Discord({
       clientId: env.DISCORD_CLIENT_ID,
