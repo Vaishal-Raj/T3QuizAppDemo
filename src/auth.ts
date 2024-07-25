@@ -8,6 +8,7 @@ import { users,accounts } from "./server/db/schema";
 import { eq } from "drizzle-orm";
 import { UserRole } from "./server/db/schema";
 import { getUserById } from "./server/actions";
+import { env } from "./env";
 export const { handlers, signIn, signOut, auth } = NextAuth({
   adapter: DrizzleAdapter(db, {
     usersTable: users,
@@ -18,19 +19,19 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
   },
   providers: [
     GitHub({
-      clientId: process.env.AUTH_GITHUB_ID,
-      clientSecret: process.env.AUTH_GITHUB_SECRET
+      clientId: env.GITHUB_CLIENT_ID,
+      clientSecret: env.GITHUB_CLIENT_SECRET
     }),
     Google({
-      clientId: process.env.AUTH_GOOGLE_ID,
-      clientSecret: process.env.AUTH_GOOGLE_SECRET
+      clientId: env.GOOGLE_CLIENT_ID,
+      clientSecret: env.GOOGLE_CLIENT_SECRET
     }),
     Discord({
-      clientId: process.env.AUTH_DISCORD_ID,
-      clientSecret: process.env.AUTH_DISCORD_SECRET
+      clientId: env.DISCORD_CLIENT_ID,
+      clientSecret: env.DISCORD_CLIENT_SECRET
     }),
   ],
-  secret:process.env.NEXTAUTH_SECRET,
+  secret:env.AUTH_SECRET,
   cookies: {
     pkceCodeVerifier: {
       name: "next-auth.pkce.code_verifier",
